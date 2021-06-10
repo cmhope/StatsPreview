@@ -15,22 +15,24 @@
 
     <title>Frontend Mentor | Stats preview card component</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <!--<style>
-      .attribution { font-size: 11px; text-align: center; }
-      .attribution a { color: hsl(228, 45%, 44%); }
-    </style>-->
 
     <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+            text-align: center;
+        }
 
         body {
             font-size: 15px;
+            background-color: blue;
             /*background-color: hsl(233, 47%, 7%);*/
         }
 
-        .{
-            text-align: center;
-        }
 
         .item1 {
             grid-area: header;
@@ -44,93 +46,119 @@
             grid-area: left_bar;
             background-color: hsl(233, 47%, 7%);
             grid-column: 1;
-            grid-row: 2 / span 3;
+            grid-row: 2;
         }
 
         .item3 {
             grid-area: left_block;
             background-color: hsl(244, 38%, 16%);
             font-family: Inter;
-            grid-column: 2 / span 3;
+            grid-column: 2 ;
             grid-row: 2 ;
             padding-left: 30px;
-            padding-top:30px;
+            padding-top: 30px;
+            /*width: 500px;*/
+            padding-bottom: 20%;
 
         }
 
         .item4 {
             grid-area: right_block;
             color: black;
-            grid-column: 5 / span 3;
-            grid-row: 2 / span 3;
+            grid-column: 3 / span 5;
+            grid-row: 2;
+            background-size: cover;
+            background-repeat: no-repeat;
+            /*content: url('./images/image-header-desktop.jpg');*/
+            /*background-image: url('./images/image-header-desktop.jpg');*/
+            /*box-shadow: inset 0 0 99999px hsl(277, 64%, 61%);*/
         }
 
-            .item4.desk_image {
-                background: linear-gradient( rgba(179, 92, 219, .7), rgba(179, 92, 219, .7) ), url('./images/image-header-desktop.jpg') no-repeat;
-                background-size: auto;
-            }
+            /*.item4 > img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient( rgba(179, 92, 219, .7), rgba(179, 92, 219, .7) ) no-repeat;
+            }*/
+
+        .desk_image {
+            box-shadow: inset 0 0 99999px rgba(179, 92, 219, 1);
+            background-image: url('./images/image-header-desktop.jpg');
+            /*background: linear-gradient( rgba(179, 92, 219, .7), rgba(179, 92, 219, .7) ), url('./images/image-header-desktop.jpg') no-repeat;*/
+            /*background: linear-gradient( rgba(179, 92, 219, .7), rgba(179, 92, 219, .7) ) no-repeat;*/
+            /*background-image: url('./images/image-header-desktop.jpg');*/ /*hsl(277, 64%, 61%)*/
+            /*z-index: -1;*/
+            /*position: absolute;*/
+            /*overflow: hidden;
+            z-index: 2;
+            object-fit: cover;*/
+        }
 
         .item5 {
             grid-area: right_bar;
             background-color: hsl(233, 47%, 7%);
             grid-column: 8;
-            grid-row: 2 / span 3;
+            grid-row: 2;
         }
 
         .item6 {
             grid-area: footer;
             background-color: hsl(233, 47%, 7%);
-            height: 8em;
             grid-column: 1 / span 8;
-            grid-row: 5;
+            grid-row: 3;
+            height: 8em;
         }
 
-        div.header {
+        .header {
             color: hsl(0, 0%, 100%);
             font-weight: 700;
             font-size: 28px;
         }
 
-        div.paragraph {
+        .paragraph {
             color: hsla(0, 0%, 100%, 0.75);
             font-weight: 400;
             font-size: 12px;
             padding-top: 20px;
         }
 
-        div.stats {
+        .stats {
             background-color: hsl(244, 38%, 16%);
             font-family: Inter;
             color: hsl(0, 0%, 100%);
             font-weight: 700;
             font-size: 20px;
-            padding-left: 30px;
             padding-top: 30px;
+            display: inline-block;
+            width: 25%;
         }
 
-        div.stats_header {
+        .stats_header {
             background-color: hsl(244, 38%, 16%);
             font-family: Lexend Deca;
             color: hsla(0, 0%, 100%, 0.6);
             font-size: 12px;
             text-transform: uppercase;
             font-weight: 400;
-            padding-left: 30px;
             padding-top: 6px;
             padding-bottom: 30px;
+            display: inline-block;
+            width: 25%;
         }
 
-        div.mobile_image {
+        .mobile_image {
             content: url('./images/image-header-mobile.jpg');
         }
 
 
         .grid-container {
             display: grid;
-            /*grid-gap: 5px;*/
+            /*width: 100%;*/
+            grid-gap: 5px;
         }
 
         .grid-container > div {
+            /*applies only to divs inside grid-container*/
         }
 
     </style>
@@ -143,25 +171,22 @@
         <div class="item1">Header</div>
         <div class="item2">Left Bar</div>
 
-        <div class="item3 header">
+        <div class="item3">
             <div class="header">
                 Get<span style="color: hsl(277, 64%, 61%);"> insights</span> that help your business grow.
             </div>
             <div class="paragraph">
                 Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
             </div>
-        </div>
-        <div class="item4 desk_image"></div>
-        <div class="item5">Right Bar</div>
-
             <div class="stats">10k+</div>
             <div class="stats">314</div>
             <div class="stats">12M</div>
-
             <div class="stats_header">companies</div>
             <div class="stats_header">templates</div>
             <div class="stats_header">queries</div>
-
+        </div>
+        <div class="item4 desk_image"></div>
+        <div class="item5">Right Bar</div>
         <div class="item6">Footer</div>
     </div>
 
